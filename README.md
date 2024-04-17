@@ -1,6 +1,4 @@
 # Ontketen de Kracht van Intrusiedetectie
-*Dries Vandenhaute*  
-*17 april 2024*
 
 ## Introductie
 In dit artikel wordt er praktisch besproken hoe Snort als IDS kan toegepast worden in een netwerkomgeving. Snort is een open-source IDS die gebruik maakt van signature-based detection. Dit betekent dat Snort aan de hand van vooraf gedefinieerde regels (signatures) kan detecteren of er zich verdachte activiteiten voordoen in het netwerk. Snort is een van de meest gebruikte IDS'en en is zeer populair in zowel kleine als grote netwerkomgevingen.
