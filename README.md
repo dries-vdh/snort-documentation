@@ -187,5 +187,7 @@ sudo snort -c /usr/local/etc/snort/snort.lua -T
 In deze repo is er een installatie script aanwezig die de installatie van Snort automatiseert. Dit script kan uitgevoerd worden door volgend commando uit te voeren.
 
 ```bash
+chmod +x install_snort.sh
+
 sudo bash install_snort.sh
 ```
