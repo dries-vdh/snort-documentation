@@ -210,8 +210,33 @@ pulledpork.py -V
 
 Verplaats het tar.gz bestand naar de folder waar PulledPork3 geïnstalleerd is.
 
+De configuratie van PulledPork3 moet aangepast worden alvorens het script gerund kan worden dit kan als volgt aangepast worden.
+
 ```bash
 
+sudo vim /usr/local/etc/pulledpork/pulledpork.conf
+
+# volgende regels moeten aangepast worden
+
+registered_ruleset = true
+
+# comment de blocklist blocklist_path variable
+
+snort_path = /usr/local/bin/snort
+
+rule_path = /usr/share/rules/pulledpork.rules
+
+sorule_path = /usr/share/rules/so_rules
+
+```
+
+Nu kan PulledPork3 gerund worden met volgend commando.
+
+```bash
+
+sudo ./pulledpork.py -c /usr/local/etc/pulledpork/pulledpork.conf -i -v -f Talos_LightSPD.tar.gz
+    
+```
 
 
 ## Tools
