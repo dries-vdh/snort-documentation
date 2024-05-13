@@ -180,6 +180,40 @@ Nu kan de configuratie getest worden door volgend commando uit te voeren.
 sudo snort -c /usr/local/etc/snort/snort.lua -T
 ```
 
+### Implementeren van Cisco Talos Rules
+
+In dit deel zal ik tonen hoe je de registered user rules van Cisco Talos kan implementeren in Snort. Dit zijn gratis rules die je kan downloaden van de website van Snort. Om deze rules te downloaden moet je een account aanmaken op de website van Snort. Wanneer je een account hebt aangemaakt kan je de rules downloaden. Deze rules kan je downloaden als een tar.gz bestand.
+
+Hierna zal PulledPork3 geïnstalleerd worden. Dit is een Python 3 script dat de rules kan downloaden en toevoegen aan de configuratie van Snort.
+
+```bash
+
+git clone https://github.com/shirkdog/pulledpork3.git
+cd pulledpork3
+
+sudo mkdir /usr/local/etc/pulledpork/
+sudo cp etc/pulledpork.conf /usr/local/etc/pulledpork/
+
+sudo mkdir /usr/local/bin/pulledpork/
+sudo cp pulledpork.py /usr/local/bin/pulledpork/
+sudo cp -r lib/ /usr/local/bin/pulledpork/
+
+```
+
+De installatie kan gecontroleerd worden met volgend commando.
+
+```bash
+
+pulledpork.py -V
+
+```
+
+Verplaats het tar.gz bestand naar de folder waar PulledPork3 geïnstalleerd is.
+
+```bash
+
+
+
 ## Tools
 
 ### Snort installation script
@@ -191,3 +225,9 @@ chmod +x install_snort.sh
 
 sudo bash install_snort.sh
 ```
+
+## Bronnen
+
+https://www.zenarmor.com/docs/linux-tutorials/how-to-install-and-configure-snort-on-ubuntu-linux
+
+https://github.com/shirkdog/pulledpork3
