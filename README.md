@@ -233,9 +233,9 @@ sorule_path = /usr/share/rules/so_rules
 Nu kan PulledPork3 gerund worden met volgend commando.
 
 ```bash
+mkdir /usr/share/rules/so_rules
 
-sudo ./pulledpork.py -c /usr/local/etc/pulledpork/pulledpork.conf -i -v -f Talos_LightSPD.tar.gz
-    
+sudo ./pulledpork.py -c /usr/local/etc/pulledpork/pulledpork.conf -i -v -f Talos_LightSPD.tar.gz   
 ```
 
 De rules kunnen toegevoegd worden aan de configuratie van Snort door volgende regel toe te voegen aan de **ips** sectie.
@@ -251,18 +251,13 @@ include = '/usr/share/rules/pulledpork.rules'
 Om de shared objects rules te kunnen gebruiken moet de so_rules folder toegevoegd worden als command line argument. Dit kan met de **--plugin-path** argument.
 
 ```bash
-
-sudo snort -c /usr/local/etc/snort/snort.lua -T --plugin-path /usr/share/rules/so_rules/
-
-    
+sudo snort -c /usr/local/etc/snort/snort.lua -T --plugin-path /usr/share/rules/so_rules/   
 ```
 
 Als dit commando geen fouten geeft kan je Snort starten met volgend commando.
 
 ```bash
-
 sudo snort -v -A full -i ens37 -c /usr/local/etc/snort/snort.lua --plugin-path /usr/share/rules/so_rules/
-
 ```
 
 Verander de **ens37** naar de interface die je wilt monitoren.
